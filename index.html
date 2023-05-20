@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="portfolio.css">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+
+}
+
+/* global variables */
+:root {
+    --sideBGcolor: #040b14;
+    --themeColor: #00A78E;
+    --iconBGcolor: #2C2F3F;
+    --textColor: #525252;
+    --bgcolor: #F7F7F7;
+}
+
+header {
+    height: 100vh;
+    width: 300px;
+    padding: 15px 30px;
+    background-color: var(--sideBGcolor);
+    overflow-y: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: 0.4s;
+    z-index: 99;
+}
+
+header .sachin {
+    text-align: center;
+    margin: 10px 0;
+
+}
+
+header .sachin img {
+    width: 150px;
+    border-radius: 50%;
+    border: 10px solid var(--iconBGcolor);
+}
+
+header .sachin h1 {
+    color: white;
+    font-weight: 600;
+}
+
+header .sachin .icons a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 37px;
+    background-color: var(--iconBGcolor);
+    color: white;
+    font-size: 18px;
+    margin: 1.5px;
+    transition: 0.4s;
+
+}
+
+header .sachin .icons a:hover {
+    background-color: var(--themeColor);
+}
+
+header nav {
+    margin-top: 30px;
+
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 10px;
+    margin: 7px 0;
+    color: lightgray;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.6px;
+}
+
+header nav ul li a i {
+    margin-right: 10px;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+header nav ul li a:hover i {
+    color: var(--themeColor);
+}
+
+header nav ul li .active i {
+    color: var(--themeColor);
+}
+
+header .footer {
+    text-align: center;
+    background-color: var(--sideBGcolor);
+    width: 300px;
+    color: lightgray;
+    font-size: 14px;
+    letter-spacing: 0.6px;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transition: 0.4s;
+}
+
+header .footer p a {
+    color: var(--themeColor);
+}
+
+#Btn {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    color: white;
+    background-color: var(--themeColor);
+    text-align: center;
+    line-height: 42px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 20%);
+    z-index: 999;
+    display: none;
+
+}
+
+@media only screen and (max-width: 1050px) {
+    header {
+        left: -300px;
+    }
+
+    header .footer {
+        left: -300px;
+    }
+
+    #Btn {
+        display: block;
+    }
+}
+
+.mobile-nav-active header {
+    left: 0;
+}
+
+
+.mobile-nav-active header .footer {
+    left: 0;
+}
+
+main {
+    margin-left: 300px;
+    background-color: var(--bgcolor);
+    transition: 0.3s;
+}
+
+@media only screen and (max-width: 1050px) {
+    main {
+        margin-left: 0;
+    }
+}
+
+#home {
+    height: 100vh;
+    width: 100%;
+    background-image: url(sach.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px;
+    position: relative;
+}
+
+#home::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #040b1469;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#home .home-sachin {
+    z-index: 1;
+}
+
+#home .home-sachin h1 {
+    font-size: 60px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    line-height: 70px;
+}
+
+#home .home-sachin h1 span {
+    color: var(--themeColor);
+}
+
+#home .home-sachin p {
+    color: whitesmoke;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+#home .home-sachin p span {
+    border-bottom: 4px solid var(--themeColor);
+}
+
+@media only screen and (max-width: 670px) {
+    #home {
+        padding: 30px;
+    }
+
+    #home .home-sachin h1 {
+        font-size: 35px;
+        letter-spacing: 0;
+        line-height: 50px;
+    }
+
+    #home .home-sachin h1 br {
+        display: none;
+    }
+
+    #home .home-sachin p {
+        font-size: 20px;
+        font-weight: 400;
+    }
+}
+
+#about {
+    padding: 70px 30px;
+}
+
+.heading {
+    color: black;
+    font-size: 30px;
+    margin-bottom: 10px;
+
+
+}
+
+.d-sp {
+    width: 80px;
+    height: 4px;
+    background-color: var(--themeColor);
+    border-radius: 3px;
+}
+
+#about .d-sp~p {
+    color: var(--textColor);
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+#about .about-sps {
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+
+}
+
+#about .about-sps .img-c {
+    flex-basis: 35%;
+    text-align: center;
+
+}
+
+#about .about-sps .img-c img {
+    width: 100%;
+}
+
+#about .about-sps .info-c {
+    flex-basis: 70%;
+}
+
+#about .about-sps .info-c h2 {
+    color: var(--themeColor);
+    font-weight: 700;
+    font-size: 35px;
+    letter-spacing: 0.5px;
+    margin-top: -10px;
+}
+
+#about .about-sps .info-c p {
+    color: var(--textColor);
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    font-style: italic;
+}
+
+#about .about-sps .info-c .icon-l-c {
+    display: flex;
+    margin-top: 20px;
+    gap: 40px;
+}
+
+#about .about-sps .info-c .icon-l-c .icon-l ul li {
+    list-style: none;
+    margin: 15px 0;
+
+}
+
+#about .about-sps .info-c .icon-l-c .icon-l ul li i {
+    color: var(--themeColor);
+}
+
+#about .about-sps .info-c .icon-l-c .icon-l ul li strong {
+    color: var(--sideBGcolor);
+    font-weight: 600;
+    margin-right: 2px;
+}
+
+#about .about-sps .info-c .icon-l-c .icon-l ul li span {
+    color: var(--textColor);
+    font-weight: 500;
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 850px) {
+    #about {
+        padding: 50px;
+    }
+
+    #about .d-sp~p {
+        color: var(--textColor);
+        font-size: 14px;
+        letter-spacing: 0px;
+        text-align: justify;
+    }
+
+    #about .about-sps {
+        flex-direction: column;
+
+    }
+
+    #about .about-sps .img-c img {
+        width: 50%;
+    }
+
+    #about .about-sps .info-c h2 {
+        font-weight: 700;
+        font-size: 25px;
+        letter-spacing: 0px;
+
+    }
+
+    #about .about-sps .info-c p {
+        font-size: 15px;
+        letter-spacing: 0px;
+    }
+    #about .about-sps .info-c .icon-l-c {
+        flex-direction: column;
+        gap: 0;
+    }
+    #about .about-sps .info-c .icon-l-c .icon-l ul li {
+        margin: 10px 0;
+    
+    }
+    #about .about-sps .info-c .icon-l-c .icon-l ul li strong {
+        font-weight: 500;
+        margin-right: 0;
+    }
+    #about .about-sps .info-c .icon-l-c .icon-l ul li span {
+        color: var(--textColor);
+        font-weight: 400;
+        font-size: 13px;
+    }
+
+}
+
+@media only screen and (max-width: 400px){
+    #about .about-sps .img-c img {
+        width: 90%;
+    }
+
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="sachin">
+            <img src="15.jpeg" alt="" width="150px">
+            <h1>Sachin pal</h1>
+            <div class="icons">
+                <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a> 
+                <a href="https://www.whatsapp.com"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+        <!---Navbar-->
+        <nav>
+            <ul>
+                <li><a href="#" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="about.html"><i class="fa-solid fa-user"></i> About Me</a></li>
+                <li><a href="sachin new resume.pdf"><i class="fa-solid fa-briefcase"></i> Resume</a></li>
+                <li><a href="#"><i class="fa-solid fa-server"></i> Services</a></li>
+                <li><a href="#"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+
+        <!---Footer-->
+        <div class="footer">
+            <p>&copy; Copyright 2023 <br>Designed By <a href="https://sachin_pal.xyz" target="_blank">Sachin_pal</a></p>
+        </div>
+    </header>
+    <i class="fa-solid fa-bars" id="Btn"></i>
+
+    <main>
+        <section id="home">
+            <div class="home-sachin">
+               <h1>Hi, I am <br>sachin pal<span>.</span></h1>
+               <p>I'm a Web devloper<span class="a-sachin"></span></p>
+               <p>I'm a pursuing diploma from Ambedkar College<span class="a-sachin"></span></p>
+            </div>
+        </section>
+
+        <section id="about">
+            <h1 class="heading">About Me</h1>
+            <div class="d-sp"></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse impedit repudiandae in corporis ab debitis eos, dolorum natus cum reiciendis quisquam libero? Doloremque explicabo amet velit necessitatibus corporis ad ut?</p>
+
+            <div class="about-sps">
+                <div class="img-c">
+                    <img src="14.jpeg">
+                </div>
+                <div class="info-c">
+                    <h2>Webdeginer & Devloper!</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam porro cumque, impedit eveniet amet perspiciatis numquam iure officia veniam voluptatum ullam aut accusantium id quod ducimus nisi temporibus nesciunt mollitia.</p>
+                    <div class="icon-l-c">
+                        <div class="icon-l">
+                            <ul>
+                                <li><i class="fa-solid fa-angle-right"></i><strong>Birthday:</strong><span>7 Apr 2004</span></li>
+                                <li><i class="fa-solid fa-angle-right"></i><strong>Website:</strong><span>www,sachin_pal@123</span></li>
+                                <li><i class="fa-solid fa-angle-right"></i><strong>Phone:</strong><span>+91 9406875xxx</span></li>
+                                <li><i class="fa-solid fa-angle-right"></i><strong>City:</strong><span>India, madhya pradesh, Gwalior</span></li>
+                            </ul>
+                        </div>
+                        <div class="icon-l">
+                            <ul>
+                                <li><i class="fa-solid fa-angle-right"></i><strong>Age:</strong><span>19</span></li>
+                                <li><i class="fa-solid fa-angle-right"></i><strong>Diploma:</strong><span>Polytechnic</span></li>
+                                <li><i class="fa-solid fa-angle-right"></i><strong>Email:</strong><span>Sachinpalind@12354gmail.com</span></li>
+                                <li><i class="fa-solid fa-angle-right"></i><strong>Freelace:</strong><span>Available</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/aa5f332820.js" crossorigin="anonymous"></script>
+</body>
+</html>
